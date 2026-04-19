@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SodaTable : BaseStation, IInteractable
+public class CoffeeTable : BaseStation, IInteractable
 {
     public bool CanInteractWith(PlayerControl player)
     {
@@ -14,7 +14,7 @@ public class SodaTable : BaseStation, IInteractable
 
         if (!player.heldItem.IsCup)
         {
-            Show(player, "Hold an empty cup to fill soda");
+            Show(player, "Hold an empty cup to fill coffee");
             return;
         }
 
@@ -24,8 +24,8 @@ public class SodaTable : BaseStation, IInteractable
             return;
         }
 
-        player.heldItem.cupHasSoda = true;
+        player.heldItem.cupHasCoffee = true;
         player.RefreshHeldItemDisplay();
-        Show(player, "Filled cup with soda");
+        Show(player, "Filled cup with coffee");
     }
 }
